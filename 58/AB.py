@@ -1,18 +1,7 @@
-import math
+N = int(input())
 
-a=int(input())
-count = []
-
-
-for el in range(1, math.ceil(a/2)+1):
-    if a % el == 0:
-        count.append(el)
-    if sum(count) >= a:
-        break
-
-
-if sum(count) == a:
-    count=sorted(count)
-    print(' '.join(list(map(str, count))))
+D = [d for d in range(1, N // 2 + 1) if N % d == 0]
+if N == sum(D):
+    print(*D)
 else:
     print(0)
